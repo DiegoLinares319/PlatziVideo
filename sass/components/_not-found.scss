@@ -1,0 +1,38 @@
+.main-not-found {
+  width: 100%;
+  height: calc(100vh - 18rem);
+  background-image: linear-gradient($color-primario, $morado-secundario);
+  color: $color-claro;
+  @include flex(column, center, center);
+  &__error {
+    font-size: 14rem;
+  }
+  &__subtitle {
+    font-size: 2.4rem;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-duration: 1s;
+}
+
+/*# sourceMappingURL=_not-found.scss.map */

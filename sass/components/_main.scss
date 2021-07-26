@@ -1,0 +1,180 @@
+body {
+  background-color: $morado-secundario;
+}
+
+.header {
+  @extend header;
+  padding: 0 1.7rem;
+  background-color: transparent;
+  @include flex($justify:space-between);
+  &__logo-container {
+    width: 20rem;
+    height: 8rem;
+    @include flex($align:center);
+  }
+  &__logo {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  &__menu {
+    position: relative;
+    ul {
+      display: none;
+      position: absolute;
+      top: 6rem;
+      right: 0;
+      list-style: none;
+      width: 10rem;
+      text-align: right;
+      li {
+        margin: 1rem 0;
+      }
+    }
+    &:hover ul, ul:hover {
+      display: block;
+    }
+    &-profile {
+      height: 100%;
+      @include flex($align:center, $a-self: center);
+      img {
+        margin-right: 0.8rem;
+        width: 4rem;
+      }
+      p {
+        color: $color-claro;
+      }
+    }
+  }
+}
+
+.main {
+  height: 30rem;
+  @include flex(column, center, center);
+  &__title {
+    margin-bottom: 2.5rem;
+    color: $color-claro;
+    font-size: 2.5rem;
+  }
+}
+
+.search-input {
+  display: block;
+  width: 70%;
+  height: 5rem;
+  padding-left: 2rem;
+  border: 0.2rem solid $color-claro;
+  border-radius: 3rem;
+  color: $color-claro;
+  font-family: $fuente-principal;
+  font-size: 1.6rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.categories__title {
+  position: absolute;
+  padding-left: 3rem;
+  width: 100%;
+  font-size: 2rem;
+  z-index: 1;
+  color: $color-claro;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  padding: 3rem 3rem .5rem;
+  margin-bottom: 3rem;
+  overflow-x: scroll;
+  background-color: $morado-secundario;
+  &__container {
+    margin: 7rem 0;
+    padding-bottom: 1rem;
+    white-space: nowrap;
+    &:hover .carousel-item {
+      opacity: 0.3;
+    }
+    &:hover .carousel-item:hover {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+  }
+  &-item {
+    position: relative;
+    display: inline-block;
+    width: 20rem;
+    height: 25rem;
+    margin-right: 1rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    background-color: $color-claro;
+    color: $color-claro;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+    &:hover ~ .carousel-item {
+      transform: translateX(10rem);
+    }
+    &__img {
+      width: 20rem;
+      height: 25rem;
+      object-fit: cover;
+    }
+    &__details {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1rem;
+      font-size: 1rem;
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+      opacity: 0;
+      transition: 450ms opacity;
+      &--title {
+        position: absolute;
+        bottom: 3.2rem;
+        left: 1rem;
+      }
+      &--subtitle {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+      }
+    }
+    &:hover .carousel-item__details {
+      opacity: 1;
+    }
+    &__icon {
+      position: absolute;
+      left: 1rem;
+      bottom: 5.5rem;
+      width: 2.8rem;
+      height: 2.8rem;
+      &--second {
+        left: 4rem;
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    height: 1.8rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: .2rem solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+  }
+}
+
+.main-footer {
+  @extend .footer;
+  background-color: $morado-secundario;
+  .main-footer__item {
+    @extend .footer__item;
+  }
+}
+
+/*# sourceMappingURL=_main.scss.map */

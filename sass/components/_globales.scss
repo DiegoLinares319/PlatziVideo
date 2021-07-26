@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+$color-claro: #FFFFFF;
+$color-primario: #21C08B;
+$morado-primario: #AB88FF;
+$morado-secundario: #834dfc;
+$morado-terciario: #8f57fd;
+$fuente-principal: 'Mulish', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $fuente-principal;
+}
+
+@mixin flex($direction:none, $align:none, $justify:none, $a-self:none, $j-self:none, $flex:flex) {
+  @if $flex == flex {
+    display: flex;
+  }
+  @if $direction != none {
+    flex-direction: $direction;
+  }
+  @if $align != none {
+    align-items: $align;
+  }
+  @if $justify != none {
+    justify-content: $justify;
+  }
+  @if $a-self != none {
+    align-self: $a-self;
+  }
+  @if $j-self != none {
+    justify-self: $j-self;
+  }
+}
+
+a {
+  color: $color-claro;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+::placeholder {
+  color: $color-claro;
+}
+
+/*# sourceMappingURL=_globales.scss.map */
